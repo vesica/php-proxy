@@ -73,12 +73,17 @@ class Proxy
             $uri = $uri->withPort($port);
         }
 
+
+
         // Check for subdirectory.
         if ($path = $target->getPath()) {
-            $uri = $uri->withPath(rtrim($path, '/') . ltrim($uri->getPath(), '/'));
+            //$uri = $uri->withPath(rtrim($path, '/') . ltrim($uri->getPath(), '/'));
+            $uri = $uri->withPath(rtrim($path, '/') . '/' . ltrim($uri->getPath(), '/'));
         }
 
         $request = $this->request->withUri($uri);
+
+        //var_dump($request->getUri());exit;
 
         $stack = $this->filters;
 
