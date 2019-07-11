@@ -83,8 +83,6 @@ class Proxy
 
         $request = $this->request->withUri($uri);
 
-        //var_dump($request->getUri());exit;
-
         $stack = $this->filters;
 
         $stack[] = function (RequestInterface $request, ResponseInterface $response, callable $next) {

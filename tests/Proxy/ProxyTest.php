@@ -128,15 +128,4 @@ class ProxyTest extends TestCase
         $proxy->forward($request)->to($url);
     }
 
-    public function test_with_port()
-    {
-        $request = new Request('http://domainone.com', 'GET');
-        $url = 'https://domain2.com:8080/mysite';
-
-        $adapter = $this->getMockBuilder(DummyAdapter::class)
-            ->getMock();
-
-        $proxy = new Proxy($adapter);
-        $proxy->forward($request)->to($url);
-    }
 }
