@@ -7,8 +7,8 @@ use Proxy\Exception\UnexpectedValueException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Relay\RelayBuilder;
-use Zend\Diactoros\Response;
-use Zend\Diactoros\Uri;
+use Slim\Http\Response;
+use Slim\Http\Uri;
 
 class Proxy
 {
